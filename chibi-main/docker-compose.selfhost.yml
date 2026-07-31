@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  chibi:
+    build: .
+    image: chibi-bot-ar:latest
+    container_name: chibi-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - chibi_data:/app/data
+
+volumes:
+  chibi_data: {}
